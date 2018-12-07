@@ -24,4 +24,9 @@ public abstract class RowingMachine : MonoBehaviour {
     {
         get { return frequency - idealFrequency; }
     }
+    public float PullStrength;
+    //public float PullStrength
+    //{
+    //    get { return PullStrength; }
+    //}
 }
