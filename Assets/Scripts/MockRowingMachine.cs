@@ -42,12 +42,12 @@ public class MockRowingMachine : RowingMachine {
         // Changes pullstrength based on how when the trigger was pressed
         if (triggered && absSinus < maxGood)
         {
-            PullStrength += forcePerPull;
+            PullStrength += forcePerPull * (1f - absSinus);
             Debug.Log("Good");
         }
         else if (triggered && absSinus < maxEnough)
         {
-            PullStrength += forcePerPull / 2;
+            PullStrength += forcePerPull * (1f - absSinus) * 0.5f;
             Debug.Log("Enough");
         }
         else if (triggered)
