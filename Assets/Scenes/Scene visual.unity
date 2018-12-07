@@ -2543,6 +2543,11 @@ Prefab:
       propertyPath: allowedOffset
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114598368243326012, guid: 375b338e017618148b94ecdc093a58ca,
+        type: 2}
+      propertyPath: TriggerName
+      value: JoystickLT
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 375b338e017618148b94ecdc093a58ca, type: 2}
   m_IsPrefabAsset: 0

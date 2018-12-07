@@ -7,6 +7,7 @@ public class MockRowingMachine : RowingMachine {
     //[Tooltip("The mock of the frequency")]
     //public float mFrequency = 60;
     private bool released = true;
+    private bool triggerAllowed = true;
     public string TriggerName = "JoystickRT";
     [Tooltip("Speed of the sinus")]
     public float sinusSpeed = 1f;
@@ -26,13 +27,17 @@ public class MockRowingMachine : RowingMachine {
         sinus = Mathf.Sin(Time.time * sinusSpeed);
         float absSinus = Mathf.Abs(sinus);
 
+        if (absSinus > 0.99f && triggerAllowed == false)
+            triggerAllowed = true;
+
         // Checks if trigger is pressed or released
         float triggerValue = Input.GetAxis(TriggerName);
         bool triggered = false;
-        if (released && triggerValue > 0.8f)
+        if (triggerAllowed && released && triggerValue > 0.8f)
         {
             released = false;
             triggered = true;
+            triggerAllowed = false;
         }
         else if (triggerValue < 0.2f)
         {
@@ -43,12 +48,12 @@ public class MockRowingMachine : RowingMachine {
         if (triggered && absSinus < maxGood)
         {
             PullStrength += forcePerPull * (1f - absSinus);
-            Debug.Log("Good");
+            Debug.Log("Good" + forcePerPull * (1f - absSinus));
         }
         else if (triggered && absSinus < maxEnough)
         {
             PullStrength += forcePerPull * (1f - absSinus) * 0.5f;
-            Debug.Log("Enough");
+            Debug.Log("Enough" + forcePerPull * (1f - absSinus) * 0.5f);
         }
         else if (triggered)
         {
