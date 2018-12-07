@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Obsolete("Players are gonna be moved by another player")]
+[System.Obsolete("Players are gonna be moved by another class")]
 public class PlayerMovement : MonoBehaviour {
     public float speed;
 

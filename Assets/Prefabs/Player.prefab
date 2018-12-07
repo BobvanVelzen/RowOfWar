@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 114728428410242838}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1381,9 +1381,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 
-  allowedOffset: 10
-  idealFrequency: 60
-  mFrequency: 60
+  allowedOffset: 1
+  idealFrequency: 10
+  PullStrength: 0
+  TriggerName: JoystickRT
+  sinusSpeed: 1
+  forcePerPull: 2
+  missPenalty: 1
+  maxGood: 0.5
+  maxEnough: 0.8
 --- !u!114 &114682401933419200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1408,7 +1414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e40ad465f86d5bb48a343dc0c8a8e880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: 1
+  speedModifier: 0.1
 --- !u!137 &137676010548378742
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

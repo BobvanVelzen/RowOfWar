@@ -31,5 +31,6 @@ public class Player : MonoBehaviour {
     public void ResetPosition()
     {
         transform.position = startPos;
+        rowingMachine.PullStrength = 0f;
     }
 }

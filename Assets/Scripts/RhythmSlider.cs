@@ -13,9 +13,10 @@ public class RhythmSlider : MonoBehaviour {
         set
         {
             playerRowingMachine = value;
-            float minFreq = value.idealFrequency - value.allowedOffset;
-            float maxFreq = value.idealFrequency + value.allowedOffset;
-            SetFrequencyBounds(minFreq, maxFreq);
+            SetFrequencyBounds(-1, 1);
+            //float minFreq = value.idealFrequency - value.allowedOffset;
+            //float maxFreq = value.idealFrequency + value.allowedOffset;
+            //SetFrequencyBounds(minFreq, maxFreq);
         }
     }
     private bool setBounds = false;
@@ -30,7 +31,7 @@ public class RhythmSlider : MonoBehaviour {
     private void Update()
     {
         if (playerRowingMachine != null)
-            SetFrequency(playerRowingMachine.Frequency);
+            SetFrequency(playerRowingMachine.Sinus);
     }
 
     /// <summary>
