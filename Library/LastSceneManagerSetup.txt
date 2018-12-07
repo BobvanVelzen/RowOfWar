@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/UISscene.unity
+- path: Assets/Scenes/Scene visual.unity
   isLoaded: 1
   isActive: 1
