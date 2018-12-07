@@ -15,6 +15,11 @@ public abstract class RowingMachine : MonoBehaviour {
     {
         get { return frequency; }
     }
+    protected float sinus;
+    public float Sinus
+    {
+        get { return sinus; }
+    }
     public float Offset
     {
         get { return frequency - idealFrequency; }

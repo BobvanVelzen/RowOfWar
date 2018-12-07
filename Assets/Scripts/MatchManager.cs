@@ -60,7 +60,7 @@ public class MatchManager : MonoBehaviour {
     {
         float value = multiplier * (Mathf.Abs(player.Offset) - Mathf.Abs(CPU.Offset));
         value = Mathf.Clamp(value, -maxValue, maxValue);
-        return Mathf.Abs(value) > 0.01 ? value : 0f;
+        return Mathf.Abs(value) > 0.01f ? value : 0f;
     }
 
     private void MoveRope()
