@@ -1380,12 +1380,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12062f403a3efc644abda0e43f64415d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 
-  allowedOffset: 1
-  idealFrequency: 10
   PullStrength: 0
   TriggerName: JoystickRT
   sinusSpeed: 1
+  decaySpeed: 1
   forcePerPull: 2
   missPenalty: 1
   maxGood: 0.5
@@ -1398,7 +1396,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1691481098002218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 129e5c22124c5d940a5d5edd749be5f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c509d360bf475843aeda4fc016eb1dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftHandTarget: {fileID: 4744296184935584}
@@ -1411,10 +1409,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1691481098002218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e40ad465f86d5bb48a343dc0c8a8e880, type: 3}
+  m_Script: {fileID: 11500000, guid: 4774ab0f4a1e46e458614c124468da05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: 0.1
+  speedModifier: 1
 --- !u!137 &137676010548378742
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
