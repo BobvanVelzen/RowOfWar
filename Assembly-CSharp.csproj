@@ -73,6 +73,7 @@
      <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\Imports\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\Imports\tutorial.txt" />
      <None Include="Assets\Imports\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
