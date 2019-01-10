@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964127, b: 0.57481724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -784,6 +784,36 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224520046640099872, guid: 4a433ca4fee640d49ad50d30101b6b0c,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224520046640099872, guid: 4a433ca4fee640d49ad50d30101b6b0c,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224200746142573804, guid: 4a433ca4fee640d49ad50d30101b6b0c,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224200746142573804, guid: 4a433ca4fee640d49ad50d30101b6b0c,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224200746142573804, guid: 4a433ca4fee640d49ad50d30101b6b0c,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114745102058654722, guid: 4a433ca4fee640d49ad50d30101b6b0c,
+        type: 2}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 261616478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a433ca4fee640d49ad50d30101b6b0c, type: 2}
   m_IsPrefabAsset: 0
@@ -805,6 +835,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 261616474}
   m_Script: {fileID: 11500000, guid: ab86edee80949a94c8bfb3b31b77e8a3, type: 3}
+--- !u!114 &261616478 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114088111338188268, guid: 4a433ca4fee640d49ad50d30101b6b0c,
+    type: 2}
+  m_PrefabInternal: {fileID: 261616474}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &268313354
 Prefab:
   m_ObjectHideFlags: 0
