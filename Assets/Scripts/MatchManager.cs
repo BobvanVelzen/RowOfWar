@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MatchManager : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class MatchManager : MonoBehaviour {
     private float ropeValue = 0;
     public float ropeThreshold = 60f;
     private float multiplier = 0.1f;
+    private int gameCounter = 0;
 
     private UIManager visualManager;
 
@@ -98,6 +100,16 @@ public class MatchManager : MonoBehaviour {
         foreach (Player player in players)
         {
             player.ResetPosition();
+        }
+        gameCounter++;
+        RestartGame();
+    }
+
+    private void RestartGame()
+    {
+        if((gameCounter)>3)
+        {
+          SceneManager.LoadScene("Menu");
         }
     }
 }
