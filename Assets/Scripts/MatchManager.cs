@@ -16,6 +16,8 @@ public class MatchManager : MonoBehaviour {
 
     private UIManager visualManager;
 
+
+
     // Use this for initialization
     private void Awake () {
         visualManager = GetComponent<UIManager>();

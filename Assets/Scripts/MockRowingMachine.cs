@@ -22,8 +22,15 @@ public class MockRowingMachine : RowingMachine {
     public float maxBad = 0.5f;
     [Tooltip("Maximum sin value for timeframe Bad")]
     public float maxEnough = 0.8f;
-	
+
+	public bool botIsEnabled = false;
+	private float randomNumber = 0f;
+	private bool numberAvalaible = false;
+
 	void FixedUpdate () {
+
+
+
         // Get current Sin value
         sinus = Mathf.Sin(Time.time * sinusSpeed);
         float absSinus = Mathf.Abs(sinus);
@@ -31,9 +38,37 @@ public class MockRowingMachine : RowingMachine {
         if (absSinus > 0.99f && triggerAllowed == false)
             triggerAllowed = true;
 
-        // Checks if trigger is pressed or released
-        float triggerValue = Input.GetAxis(TriggerName);
-        bool triggered = false;
+		// Checks if trigger is pressed or released
+		float triggerValue = Input.GetAxis(TriggerName);
+		bool triggered = false;
+
+		// When the bot is Enabled press the button on random times in the green or yellow
+		if (botIsEnabled) {
+
+			// When the Slider is close to the middle it will calculate a random number.
+			// this number is used to determine on what color the bot will "click"
+			if (absSinus < 0.10f) {
+				if (!numberAvalaible) {
+					randomNumber = Random.Range (1, 10);
+					numberAvalaible = true;
+				}
+			}
+
+			// When the random number is highter then 5 the bot will "click" when on 
+			// Orange, otherwise it will check on the green part of the slider.
+			if (randomNumber > 5 && absSinus > 0.50f && absSinus < 0.90f) {
+				numberAvalaible = false;
+				randomNumber = 0;
+				triggerValue = 1f;
+			} else if(randomNumber <= 5 && randomNumber > 0 && absSinus > 0.90f){
+				numberAvalaible = false;
+				randomNumber = 0;
+				triggerValue = 1f;
+			}
+		}
+
+        
+
         if (triggerAllowed && released && triggerValue > 0.8f)
         {
             released = false;
