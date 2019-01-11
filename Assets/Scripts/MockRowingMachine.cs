@@ -6,7 +6,6 @@ public class MockRowingMachine : RowingMachine {
 
     //[Tooltip("The mock of the frequency")]
     //public float mFrequency = 60;
-    public TMPro.TextMeshProUGUI uiTextElement;
     private bool released = true;
     private bool triggerAllowed = true;
     public string TriggerName = "JoystickRT";
@@ -50,22 +49,16 @@ public class MockRowingMachine : RowingMachine {
         {
             PullStrength += forcePerPull * (1f - absSinus);
             Debug.Log("Good" + forcePerPull * (1f - absSinus));
-            uiTextElement.gameObject.SetActive(true);
-            uiTextElement.text = "Good";
         }
         else if (triggered && absSinus < maxEnough)
         {
             PullStrength += forcePerPull * (1f - absSinus) * 0.5f;
             Debug.Log("Enough" + forcePerPull * (1f - absSinus) * 0.5f);
-            uiTextElement.gameObject.SetActive(true);
-            uiTextElement.text = "Enough";
         }
         else if (triggered)
         {
             PullStrength -= missPenalty;
             Debug.Log("Bad");
-            uiTextElement.gameObject.SetActive(true);
-            uiTextElement.text = "Bad";
         }
         PullStrength = Mathf.Max(PullStrength - Time.deltaTime * decaySpeed, 0f);
     }
