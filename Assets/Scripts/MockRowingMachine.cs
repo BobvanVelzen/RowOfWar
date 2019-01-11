@@ -19,8 +19,8 @@ public class MockRowingMachine : RowingMachine {
     [Tooltip("Decreasement of pullStrength when missed")]
     public float missPenalty = 1f;
     [Tooltip("Maximum sin value for timeframe Good")]
-    public float maxGood = 0.5f;
-    [Tooltip("Maximum sin value for timeframe Enough")]
+    public float maxBad = 0.5f;
+    [Tooltip("Maximum sin value for timeframe Bad")]
     public float maxEnough = 0.8f;
 	
 	void FixedUpdate () {
@@ -46,26 +46,26 @@ public class MockRowingMachine : RowingMachine {
         }
 
         // Changes pullstrength based on how when the trigger was pressed
-        if (triggered && absSinus < maxGood)
-        {
-            PullStrength += forcePerPull * (1f - absSinus);
-            Debug.Log("Good" + forcePerPull * (1f - absSinus));
-            uiTextElement.gameObject.SetActive(true);
-            uiTextElement.text = "Good";
-            uiTextElement.color = Color.green;
-        }
-        else if (triggered && absSinus < maxEnough)
-        {
-            PullStrength += forcePerPull * (1f - absSinus) * 0.5f;
-            Debug.Log("Enough" + forcePerPull * (1f - absSinus) * 0.5f);
-            uiTextElement.gameObject.SetActive(true);
-            uiTextElement.text = "Good";
-            uiTextElement.color = Color.green;
-        }
-        else if (triggered)
+        if (triggered && absSinus < maxBad)
         {
             PullStrength -= missPenalty;
             Debug.Log("Bad");
+            uiTextElement.gameObject.SetActive(true);
+            uiTextElement.text = "Bad";
+            uiTextElement.color = Color.red;
+        }
+        else if (triggered && absSinus < maxEnough)
+        {
+            PullStrength += forcePerPull * (absSinus) * 0.5f;
+            Debug.Log("Enough" + forcePerPull * (absSinus) * 0.5f);
+            uiTextElement.gameObject.SetActive(true);
+            uiTextElement.text = "Enough";
+            uiTextElement.color = Color.yellow;
+        }
+        else if (triggered)
+        {
+            PullStrength += forcePerPull * (absSinus);
+            Debug.Log("Good" + forcePerPull * (absSinus));
             uiTextElement.gameObject.SetActive(true);
             uiTextElement.text = "Good";
             uiTextElement.color = Color.green;

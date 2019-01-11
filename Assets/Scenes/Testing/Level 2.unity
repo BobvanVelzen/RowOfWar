@@ -933,11 +933,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114508227565565560, guid: 4a433ca4fee640d49ad50d30101b6b0c,
-        type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 224471957949468902, guid: 4a433ca4fee640d49ad50d30101b6b0c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1011,6 +1006,11 @@ PrefabInstance:
     - target: {fileID: 114088111338188268, guid: 4a433ca4fee640d49ad50d30101b6b0c,
         type: 3}
       propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114508227565565560, guid: 4a433ca4fee640d49ad50d30101b6b0c,
+        type: 3}
+      propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114612751076834122, guid: 4a433ca4fee640d49ad50d30101b6b0c,
@@ -2260,7 +2260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1112221869
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2292,10 +2292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8c5b78d27a76447a6294c432db4701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
 --- !u!111 &1112221871
 Animation:
   m_ObjectHideFlags: 0
@@ -4299,7 +4295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1875291126
 RectTransform:
   m_ObjectHideFlags: 0
