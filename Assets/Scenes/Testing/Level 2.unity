@@ -779,6 +779,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224200746142573804, guid: 4a433ca4fee640d49ad50d30101b6b0c,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224200746142573804, guid: 4a433ca4fee640d49ad50d30101b6b0c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224200746142573804, guid: 4a433ca4fee640d49ad50d30101b6b0c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224402598196931574, guid: 4a433ca4fee640d49ad50d30101b6b0c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -914,21 +929,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224520046640099872, guid: 4a433ca4fee640d49ad50d30101b6b0c,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200746142573804, guid: 4a433ca4fee640d49ad50d30101b6b0c,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200746142573804, guid: 4a433ca4fee640d49ad50d30101b6b0c,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200746142573804, guid: 4a433ca4fee640d49ad50d30101b6b0c,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2492,6 +2492,21 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114598368243326012, guid: 375b338e017618148b94ecdc093a58ca,
+        type: 3}
+      propertyPath: TriggerName
+      value: JoystickLT
+      objectReference: {fileID: 0}
+    - target: {fileID: 114598368243326012, guid: 375b338e017618148b94ecdc093a58ca,
+        type: 3}
+      propertyPath: uiTextElement
+      value: 
+      objectReference: {fileID: 1875291127}
+    - target: {fileID: 114728428410242838, guid: 375b338e017618148b94ecdc093a58ca,
+        type: 3}
+      propertyPath: speedModifier
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 4744296184935584, guid: 375b338e017618148b94ecdc093a58ca, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2507,21 +2522,6 @@ PrefabInstance:
     - target: {fileID: 4827591925228110, guid: 375b338e017618148b94ecdc093a58ca, type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114598368243326012, guid: 375b338e017618148b94ecdc093a58ca,
-        type: 3}
-      propertyPath: TriggerName
-      value: JoystickLT
-      objectReference: {fileID: 0}
-    - target: {fileID: 114598368243326012, guid: 375b338e017618148b94ecdc093a58ca,
-        type: 3}
-      propertyPath: uiTextElement
-      value: 
-      objectReference: {fileID: 1875291127}
-    - target: {fileID: 114728428410242838, guid: 375b338e017618148b94ecdc093a58ca,
-        type: 3}
-      propertyPath: speedModifier
-      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 375b338e017618148b94ecdc093a58ca, type: 3}

@@ -48,7 +48,7 @@ public class MockRowingMachine : RowingMachine {
         // Changes pullstrength based on how when the trigger was pressed
         if (triggered && absSinus < maxBad)
         {
-            PullStrength -= missPenalty;
+            PullStrength += missPenalty;
             Debug.Log("Bad");
             uiTextElement.gameObject.SetActive(true);
             uiTextElement.text = "Bad";
@@ -56,7 +56,7 @@ public class MockRowingMachine : RowingMachine {
         }
         else if (triggered && absSinus < maxEnough)
         {
-            PullStrength += forcePerPull * (absSinus) * 0.5f;
+            PullStrength -= forcePerPull * (absSinus) * 0.5f;
             Debug.Log("Enough" + forcePerPull * (absSinus) * 0.5f);
             uiTextElement.gameObject.SetActive(true);
             uiTextElement.text = "Enough";
@@ -64,7 +64,7 @@ public class MockRowingMachine : RowingMachine {
         }
         else if (triggered)
         {
-            PullStrength += forcePerPull * (absSinus);
+            PullStrength -= forcePerPull * (absSinus);
             Debug.Log("Good" + forcePerPull * (absSinus));
             uiTextElement.gameObject.SetActive(true);
             uiTextElement.text = "Good";
