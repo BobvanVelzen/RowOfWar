@@ -56,8 +56,8 @@ public class MockRowingMachine : RowingMachine {
         }
         else if (triggered && absSinus < maxEnough)
         {
-            PullStrength += forcePerPull * (1f - absSinus) * 0.5f;
-            Debug.Log("Enough" + forcePerPull * (1f - absSinus) * 0.5f);
+            PullStrength += forcePerPull * (absSinus) * 0.5f;
+            Debug.Log("Enough" + forcePerPull * (absSinus) * 0.5f);
             uiTextElement.gameObject.SetActive(true);
             uiTextElement.text = "Enough";
             uiTextElement.color = Color.yellow;
@@ -70,9 +70,9 @@ public class MockRowingMachine : RowingMachine {
             uiTextElement.text = "Good";
             uiTextElement.color = Color.green;
         }
-       // if (PullStrength > 0f)
-        //    PullStrength = Mathf.Max(PullStrength - Time.deltaTime * decaySpeed, 0f);
-        //else if (PullStrength < 0f)
-         //   PullStrength = Mathf.Min(PullStrength + Time.deltaTime * decaySpeed, 0f);
+        if (PullStrength > 0f)
+            PullStrength = Mathf.Max(PullStrength - Time.deltaTime * decaySpeed, 0f);
+        else if (PullStrength < 0f)
+            PullStrength = Mathf.Min(PullStrength + Time.deltaTime * decaySpeed, 0f);
     }
 }
