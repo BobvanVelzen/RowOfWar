@@ -2495,7 +2495,7 @@ PrefabInstance:
     - target: {fileID: 114598368243326012, guid: 375b338e017618148b94ecdc093a58ca,
         type: 3}
       propertyPath: TriggerName
-      value: Mouse Y
+      value: JoystickLT
       objectReference: {fileID: 0}
     - target: {fileID: 114598368243326012, guid: 375b338e017618148b94ecdc093a58ca,
         type: 3}
