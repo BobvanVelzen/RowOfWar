@@ -6,6 +6,7 @@ public class MockRowingMachine : RowingMachine {
 
     //[Tooltip("The mock of the frequency")]
     //public float mFrequency = 60;
+	public string player = "1";
     public TMPro.TextMeshProUGUI uiTextElement;
     private bool released = true;
     private bool triggerAllowed = true;
@@ -38,8 +39,16 @@ public class MockRowingMachine : RowingMachine {
         if (absSinus > 0.99f && triggerAllowed == false)
             triggerAllowed = true;
 
+		// Checks if player comes from other scene (prop: Main Menu Kyle) then sets the trigger if selected
+		float triggerValue;
+		if (PlayerPrefs.HasKey ("P" + player + "Trigger")) {
+			triggerValue = Input.GetAxis(PlayerPrefs.GetString("P"+player+"Trigger"));
+				} else {
+			triggerValue = Input.GetAxis(TriggerName);
+				}
+
 		// Checks if trigger is pressed or released
-		float triggerValue = Input.GetAxis(TriggerName);
+
 		bool triggered = false;
 
 		// When the bot is Enabled press the button on random times in the green or yellow
