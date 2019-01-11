@@ -26,10 +26,13 @@ public class MockRowingMachine : RowingMachine {
 	public bool botIsEnabled = false;
 	private float randomNumber = 0f;
 	private bool numberAvalaible = false;
+    private float trigRawTmp = 0;
+    private float trigRaw;
+
 
 	void FixedUpdate () {
-
-
+        //get the raw data of the trigger with full range 0...1
+        trigRaw = Input.GetAxisRaw(TriggerName);
 
         // Get current Sin value
         sinus = Mathf.Sin(Time.time * sinusSpeed);
@@ -68,8 +71,8 @@ public class MockRowingMachine : RowingMachine {
 		}
 
         
-
-        if (triggerAllowed && released && triggerValue > 0.8f)
+        /* OLD VERSION */
+        /*if (triggerAllowed && released && triggerValue > 0.8f)
         {
             released = false;
             triggered = true;
@@ -78,13 +81,27 @@ public class MockRowingMachine : RowingMachine {
         else if (triggerValue < 0.2f)
         {
             released = true;
+        }*/
+
+        /* NEW VERSION */
+        // Since there are two events(start pulling and completely pulled)
+        // which is represent by lightly pressing the trigger and
+        // having it fully pressed, first we need to check for those events
+        if ((trigRaw == 1f || (trigRaw <= 0.02f && trigRaw > 0f)) && triggerAllowed && released && trigRaw != trigRawTmp)
+        {
+            Debug.Log(TriggerName + " EVENT  " + trigRaw);
+            released = false;
+            triggered = true;
+            triggerAllowed = false;
+            trigRawTmp = trigRaw;
         }
+        else if (trigRaw == 0f || (trigRaw < 1f && trigRaw > 0.02f)) released = true;
 
         // Changes pullstrength based on how when the trigger was pressed
         if (triggered && absSinus < maxBad)
         {
             PullStrength += missPenalty;
-            Debug.Log("Bad");
+            //Debug.Log("Bad");
             uiTextElement.gameObject.SetActive(true);
             uiTextElement.text = "Bad";
             uiTextElement.color = Color.red;
@@ -92,7 +109,7 @@ public class MockRowingMachine : RowingMachine {
         else if (triggered && absSinus < maxEnough)
         {
             PullStrength -= forcePerPull * (absSinus) * 0.5f;
-            Debug.Log("Enough" + forcePerPull * (absSinus) * 0.5f);
+            //Debug.Log("Enough" + forcePerPull * (absSinus) * 0.5f);
             uiTextElement.gameObject.SetActive(true);
             uiTextElement.text = "Enough";
             uiTextElement.color = Color.yellow;
@@ -100,7 +117,7 @@ public class MockRowingMachine : RowingMachine {
         else if (triggered)
         {
             PullStrength -= forcePerPull * (absSinus);
-            Debug.Log("Good" + forcePerPull * (absSinus));
+            //Debug.Log("Good" + forcePerPull * (absSinus));
             uiTextElement.gameObject.SetActive(true);
             uiTextElement.text = "Good";
             uiTextElement.color = Color.green;
