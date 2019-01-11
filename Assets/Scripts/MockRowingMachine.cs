@@ -25,39 +25,53 @@ public class MockRowingMachine : RowingMachine {
     public float maxEnough = 0.8f;
 
 	public bool botIsEnabled = false;
-	private float randomNumber = 0f;
+	public float randomNumber = 0f;
 	private bool numberAvalaible = false;
     private float trigRawTmp = 0;
     private float trigRaw;
+	private bool isBotChecked = false;
 
 
 	void FixedUpdate () {
-        //get the raw data of the trigger with full range 0...1
-        trigRaw = Input.GetAxisRaw(TriggerName);
+		//get the raw data of the trigger with full range 0...1
+		trigRaw = Input.GetAxisRaw (TriggerName);
 
-        // Get current Sin value
-        sinus = Mathf.Sin(Time.time * sinusSpeed);
-        float absSinus = Mathf.Abs(sinus);
+		// Get current Sin value
+		sinus = Mathf.Sin (Time.time * sinusSpeed);
+		float absSinus = Mathf.Abs (sinus);
 
-        if (absSinus > 0.99f && triggerAllowed == false)
-            triggerAllowed = true;
+		if (absSinus > 0.99f && triggerAllowed == false)
+			triggerAllowed = true;
 
 		// Checks if player comes from other scene (prop: Main Menu Kyle) then sets the trigger if selected
 		float triggerValue;
 		if (PlayerPrefs.HasKey ("P" + player + "Trigger")) {
-			triggerValue = Input.GetAxis(PlayerPrefs.GetString("P"+player+"Trigger"));
-				} else {
-			triggerValue = Input.GetAxis(TriggerName);
+			triggerValue = Input.GetAxis (PlayerPrefs.GetString ("P" + player + "Trigger"));
+			trigRaw = Input.GetAxis (PlayerPrefs.GetString ("P" + player + "Trigger"));
+		} else {
+			if (!isBotChecked) {
+				if (PlayerPrefs.HasKey ("Bot")) {
+					botIsEnabled = true;
 				}
+				isBotChecked = true;
+			}
+			triggerValue = Input.GetAxis (TriggerName);
+			trigRaw = Input.GetAxisRaw (TriggerName);
+		}
 
 		// Checks if trigger is pressed or released
 
 		bool triggered = false;
 
-		// When the bot is Enabled press the button on random times in the green or yellow
+
+
+		////////////////////////////////////////////////////////////////////////////////////
+		// Because the NPC doesnt need to do fancy stuff it will use the old code. Players
+		// need to use the updated version.
 		if (botIsEnabled) {
 
-			// When the Slider is close to the middle it will calculate a random number.
+			/* OLD VERSION */
+			// When 	the Slider is close to the middle it will calculate a random number.
 			// this number is used to determine on what color the bot will "click"
 			if (absSinus < 0.10f) {
 				if (!numberAvalaible) {
@@ -77,34 +91,43 @@ public class MockRowingMachine : RowingMachine {
 				randomNumber = 0;
 				triggerValue = 1f;
 			}
+		} else {
+
+			/* NEW VERSION */
+			// Since there are two events(start pulling and completely pulled)
+			// which is represent by lightly pressing the trigger and
+			// having it fully pressed, first we need to check for those events
+			if ((trigRaw >= 1f || (trigRaw <= 0.02f && trigRaw > 0f)) && triggerAllowed && released && trigRaw != trigRawTmp)
+			{
+				//Debug.Log(TriggerName + " EVENT  " + trigRaw);
+				released = false;
+				triggered = true;
+				triggerAllowed = false;
+				trigRawTmp = trigRaw;
+
+				if (botIsEnabled) {
+					trigRaw = 0f;
+					released = true;
+				}
+
+			}
+			else if (trigRaw == 0f || (trigRaw < 1f && trigRaw > 0.02f)) released = true;
 		}
 
-        
-        /* OLD VERSION */
-        /*if (triggerAllowed && released && triggerValue > 0.8f)
-        {
-            released = false;
-            triggered = true;
-            triggerAllowed = false;
-        }
-        else if (triggerValue < 0.2f)
-        {
-            released = true;
-        }*/
+		if (botIsEnabled) {
+			if (triggerAllowed && released && triggerValue > 0.8f)
+			{
+				released = false;
+				triggered = true;
+				triggerAllowed = false;
+			}
+			else if (triggerValue < 0.2f)
+			{
+				released = true;
+			}
 
-        /* NEW VERSION */
-        // Since there are two events(start pulling and completely pulled)
-        // which is represent by lightly pressing the trigger and
-        // having it fully pressed, first we need to check for those events
-        if ((trigRaw == 1f || (trigRaw <= 0.02f && trigRaw > 0f)) && triggerAllowed && released && trigRaw != trigRawTmp)
-        {
-            Debug.Log(TriggerName + " EVENT  " + trigRaw);
-            released = false;
-            triggered = true;
-            triggerAllowed = false;
-            trigRawTmp = trigRaw;
-        }
-        else if (trigRaw == 0f || (trigRaw < 1f && trigRaw > 0.02f)) released = true;
+		} 
+        
 
         // Changes pullstrength based on how when the trigger was pressed
         if (triggered && absSinus < maxBad)

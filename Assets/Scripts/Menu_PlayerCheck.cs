@@ -31,6 +31,7 @@ public class Menu_PlayerCheck : MonoBehaviour
     void Start()
     {
 		PlayerPrefs.DeleteAll ();
+		PlayerPrefs.SetString ("Bot", "On");
 		//tv hoeger dan 0.8f
         
     }

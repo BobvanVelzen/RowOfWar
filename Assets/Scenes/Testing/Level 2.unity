@@ -1119,6 +1119,11 @@ PrefabInstance:
       propertyPath: player
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114598368243326012, guid: 375b338e017618148b94ecdc093a58ca,
+        type: 3}
+      propertyPath: botIsEnabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114728428410242838, guid: 375b338e017618148b94ecdc093a58ca,
         type: 3}
       propertyPath: speedModifier
@@ -2524,6 +2529,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sinusSpeed
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114598368243326012, guid: 375b338e017618148b94ecdc093a58ca,
+        type: 3}
+      propertyPath: botIsEnabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114728428410242838, guid: 375b338e017618148b94ecdc093a58ca,
         type: 3}
