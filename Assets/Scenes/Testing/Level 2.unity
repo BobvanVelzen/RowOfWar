@@ -933,6 +933,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114508227565565560, guid: 4a433ca4fee640d49ad50d30101b6b0c,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224471957949468902, guid: 4a433ca4fee640d49ad50d30101b6b0c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1006,11 +1011,6 @@ PrefabInstance:
     - target: {fileID: 114088111338188268, guid: 4a433ca4fee640d49ad50d30101b6b0c,
         type: 3}
       propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114508227565565560, guid: 4a433ca4fee640d49ad50d30101b6b0c,
-        type: 3}
-      propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114612751076834122, guid: 4a433ca4fee640d49ad50d30101b6b0c,
@@ -1105,6 +1105,11 @@ PrefabInstance:
       propertyPath: uiTextElement
       value: 
       objectReference: {fileID: 1112221872}
+    - target: {fileID: 114728428410242838, guid: 375b338e017618148b94ecdc093a58ca,
+        type: 3}
+      propertyPath: speedModifier
+      value: 0.03
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 375b338e017618148b94ecdc093a58ca, type: 3}
 --- !u!4 &268313355 stripped
@@ -2513,6 +2518,11 @@ PrefabInstance:
       propertyPath: uiTextElement
       value: 
       objectReference: {fileID: 1875291127}
+    - target: {fileID: 114728428410242838, guid: 375b338e017618148b94ecdc093a58ca,
+        type: 3}
+      propertyPath: speedModifier
+      value: 0.03
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 375b338e017618148b94ecdc093a58ca, type: 3}
 --- !u!4 &1150089732 stripped
