@@ -150,9 +150,9 @@ MonoBehaviour:
   ammountOfPlayers: 0
   ammoutOfPlayersChanged: 0
   uiTextElement: {fileID: 1749008413}
-  TriggerNamePlayer1: Mouse X
+  TriggerNameFirstAdded: JoystickLT
   P1Added: 0
-  TriggerNamePlayer2: Mouse Y
+  TriggerNameSecondAdded: JoystickRT
   P2Added: 0
 --- !u!4 &206022587
 Transform:
