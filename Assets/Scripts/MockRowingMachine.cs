@@ -70,9 +70,9 @@ public class MockRowingMachine : RowingMachine {
             uiTextElement.text = "Good";
             uiTextElement.color = Color.green;
         }
-        if (PullStrength > 0f)
-            PullStrength = Mathf.Max(PullStrength - Time.deltaTime * decaySpeed, 0f);
-        else if (PullStrength < 0f)
-            PullStrength = Mathf.Min(PullStrength + Time.deltaTime * decaySpeed, 0f);
+       // if (PullStrength > 0f)
+        //    PullStrength = Mathf.Max(PullStrength - Time.deltaTime * decaySpeed, 0f);
+        //else if (PullStrength < 0f)
+         //   PullStrength = Mathf.Min(PullStrength + Time.deltaTime * decaySpeed, 0f);
     }
 }

@@ -13,6 +13,7 @@ public class RhythmSlider : MonoBehaviour {
         set
         {
             playerRowingMachine = value;
+            SetFrequencyBounds(-1, 1);
             //float minFreq = value.idealFrequency - value.allowedOffset;
             //float maxFreq = value.idealFrequency + value.allowedOffset;
             //SetFrequencyBounds(minFreq, maxFreq);
@@ -51,8 +52,8 @@ public class RhythmSlider : MonoBehaviour {
     /// </summary>
     /// <param name="frequency">Current frequency</param>
 	private void SetFrequency (float frequency) {
-        if (!setBounds)
-            return;
+        //if (!setBounds)
+          //  return;
 
         slider.value = frequency;
 	}
