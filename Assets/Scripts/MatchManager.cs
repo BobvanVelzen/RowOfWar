@@ -111,7 +111,7 @@ public class MatchManager : MonoBehaviour {
     {
         if((gameCounter)>3)
         {
-          SceneManager.LoadScene("Menu");
+          SceneManager.LoadScene("Menu Kyle");
         }
     }
 }
