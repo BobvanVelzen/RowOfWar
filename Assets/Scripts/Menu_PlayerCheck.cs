@@ -30,7 +30,8 @@ public class Menu_PlayerCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		PlayerPrefs.DeleteAll ();
+		PlayerPrefs.DeleteKey ("P2Trigger");
+		PlayerPrefs.DeleteKey ("P1Trigger");
 		PlayerPrefs.SetString ("Bot", "On");
 
         
@@ -101,8 +102,32 @@ public class Menu_PlayerCheck : MonoBehaviour
 			timeLeft -= Time.deltaTime;
 			uiTextElement.text = "Game starts in \n" + Mathf.RoundToInt(timeLeft).ToString ();
 
+
 			if (timeLeft < 0) {
-				SceneManager.LoadScene("Level 2");
+
+				if (PlayerPrefs.HasKey ("PrefLevel")) {
+					int level = PlayerPrefs.GetInt ("PrefLevel");
+
+					if (level == 2) {
+						PlayerPrefs.SetInt ("PrefLevel", 3);
+						SceneManager.LoadScene ("Level 3");
+					} else {
+						PlayerPrefs.SetInt ("PrefLevel", 2);
+						SceneManager.LoadScene ("Level 2");
+					}
+
+				} else {
+
+					int rand = Random.Range (1, 2);
+					if (rand == 1) {
+						PlayerPrefs.SetInt ("PrefLevel", 2);
+						SceneManager.LoadScene ("Level 2");
+					} else {
+						PlayerPrefs.SetInt ("PrefLevel", 3);
+						SceneManager.LoadScene ("Level 3");
+					}
+				}
+
 			}
 		}
         
