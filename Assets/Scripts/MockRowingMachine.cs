@@ -8,6 +8,7 @@ public class MockRowingMachine : RowingMachine {
     //public float mFrequency = 60;
 	public string player = "1";
     public TMPro.TextMeshProUGUI uiTextElement;
+	public TMPro.TextMeshProUGUI playerText;
     private bool released = true;
     private bool triggerAllowed = true;
     public string TriggerName = "JoystickRT";
@@ -33,8 +34,7 @@ public class MockRowingMachine : RowingMachine {
 
 	private float timer = 0f;
 
-// TODO: Jack did this. we hate him now.
-	public float triggerValue;
+	public float triggerValue; // TODO: Jack did this. we hate him now.
 
 	void FixedUpdate () {
 		timer += Time.deltaTime;
@@ -45,6 +45,15 @@ public class MockRowingMachine : RowingMachine {
 		// Get current Sin value
 		sinus = Mathf.Sin (Time.time * sinusSpeed);
 		float absSinus = Mathf.Abs (sinus);
+
+		// change text above the player
+		if(!botIsEnabled) 
+		{
+			string info = "Player ";
+			info += player.ToString();
+			playerText.text = info;
+		}
+		else playerText.text = "NPC";
 
 		if (absSinus > 0.99f && triggerAllowed == false)
 			triggerAllowed = true;
