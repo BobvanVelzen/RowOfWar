@@ -31,8 +31,14 @@ public class MockRowingMachine : RowingMachine {
     private float trigRaw;
 	private bool isBotChecked = false;
 
+	private float timer = 0f;
+
+// TODO: Jack did this. we hate him now.
+public float triggerValue;
 
 	void FixedUpdate () {
+		timer += Time.deltaTime;
+
 		//get the raw data of the trigger with full range 0...1
 		trigRaw = Input.GetAxisRaw (TriggerName);
 
@@ -44,7 +50,7 @@ public class MockRowingMachine : RowingMachine {
 			triggerAllowed = true;
 
 		// Checks if player comes from other scene (prop: Main Menu Kyle) then sets the trigger if selected
-		float triggerValue;
+		//float triggerValue;
 		if (PlayerPrefs.HasKey ("P" + player + "Trigger")) {
 			triggerValue = Input.GetAxis (PlayerPrefs.GetString ("P" + player + "Trigger"));
 			trigRaw = Input.GetAxis (PlayerPrefs.GetString ("P" + player + "Trigger"));
@@ -97,13 +103,14 @@ public class MockRowingMachine : RowingMachine {
 			// Since there are two events(start pulling and completely pulled)
 			// which is represent by lightly pressing the trigger and
 			// having it fully pressed, first we need to check for those events
-			if ((trigRaw >= 1f || (trigRaw <= 0.02f && trigRaw > 0f)) && triggerAllowed && released && trigRaw != trigRawTmp)
+			if ((trigRaw >= 1f || (trigRaw <= 0.05f && trigRaw > 0f)) && triggerAllowed && released && (trigRaw != trigRawTmp) && timer > 1)
 			{
 				//Debug.Log(TriggerName + " EVENT  " + trigRaw);
 				released = false;
 				triggered = true;
 				triggerAllowed = false;
 				trigRawTmp = trigRaw;
+				timer = 0f;
 
 				if (botIsEnabled) {
 					trigRaw = 0f;
@@ -111,7 +118,11 @@ public class MockRowingMachine : RowingMachine {
 				}
 
 			}
-			else if (trigRaw == 0f || (trigRaw < 1f && trigRaw > 0.02f)) released = true;
+			else if (trigRaw == 0f || (trigRaw < 1f && trigRaw > 0.05f))
+			{
+				released = true;
+			}
+			 
 		}
 
 		if (botIsEnabled) {
