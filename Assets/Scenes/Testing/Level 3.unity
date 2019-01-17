@@ -1159,7 +1159,7 @@ PrefabInstance:
     - target: {fileID: 114598368243326012, guid: 375b338e017618148b94ecdc093a58ca,
         type: 3}
       propertyPath: sinusSpeed
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 114598368243326012, guid: 375b338e017618148b94ecdc093a58ca,
         type: 3}
@@ -3471,7 +3471,7 @@ PrefabInstance:
     - target: {fileID: 114598368243326012, guid: 375b338e017618148b94ecdc093a58ca,
         type: 3}
       propertyPath: sinusSpeed
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 114598368243326012, guid: 375b338e017618148b94ecdc093a58ca,
         type: 3}
