@@ -26,6 +26,7 @@ public class RhythmSlider : MonoBehaviour {
     private void Awake()
     {
         slider = GetComponent<Slider>();
+		slider.value = 1f;
     }
 
     private void Update()
@@ -51,8 +52,8 @@ public class RhythmSlider : MonoBehaviour {
     /// </summary>
     /// <param name="frequency">Current frequency</param>
 	private void SetFrequency (float frequency) {
-        if (!setBounds)
-            return;
+        //if (!setBounds)
+          //  return;
 
         slider.value = frequency;
 	}

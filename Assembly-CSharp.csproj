@@ -59,8 +59,10 @@
      <Compile Include="Assets\Imports\Player\Scripts\SimpleCharacterControl.cs" />
      <Compile Include="Assets\Imports\Rocks and Boulders 2\Shaders\RotateGameObject.cs" />
      <Compile Include="Assets\Scripts\CharacterAnimator.cs" />
+     <Compile Include="Assets\Scripts\Jack.cs" />
      <Compile Include="Assets\Scripts\MatchManager.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />
+     <Compile Include="Assets\Scripts\Menu_PlayerCheck.cs" />
      <Compile Include="Assets\Scripts\MockRowingMachine.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
@@ -71,7 +73,7 @@
      <Compile Include="Assets\Scripts\Team.cs" />
      <Compile Include="Assets\Scripts\tutorial.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
-     <Compile Include="Assets\UI\Scripts\UItextFeedback.cs" />
+     <Compile Include="Assets\UI\Scripts\uiTextFeedback1.cs" />
      <None Include="Assets\Imports\LowPolyWater_Pack\LowPoly Island\Credits.txt" />
      <None Include="Assets\Imports\Rocks and Boulders 2\Shaders\shader info.txt" />
      <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
@@ -87,6 +89,7 @@
      <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Imports\Rocks and Boulders 2\Shaders\Blend SM3.shader" />
+     <None Include="Assets\Imports\BOXOPHOBIC\Skybox Cubemap Extended\Shaders\Skybox Cubemap Extended.shader" />
      <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Imports\Trees\Environments\README.txt" />
