@@ -17,7 +17,7 @@ public class Menu_PlayerCheck : MonoBehaviour
 	public bool ammoutOfPlayersChanged = false;
 
 	private bool startTimer;
-	private float timeLeft = 20;
+	private float timeLeft = 10;
 
 	public TMPro.TextMeshProUGUI uiTextElement;
 

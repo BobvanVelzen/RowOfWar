@@ -28,13 +28,13 @@ public class MockRowingMachine : RowingMachine {
 	public float randomNumber = 0f;
 	private bool numberAvalaible = false;
     private float trigRawTmp = 0;
-    private float trigRaw;
+    private float trigRaw = 0f;
 	private bool isBotChecked = false;
 
 	private float timer = 0f;
 
 // TODO: Jack did this. we hate him now.
-public float triggerValue;
+	public float triggerValue;
 
 	void FixedUpdate () {
 		timer += Time.deltaTime;
@@ -53,7 +53,7 @@ public float triggerValue;
 		//float triggerValue;
 		if (PlayerPrefs.HasKey ("P" + player + "Trigger")) {
 			triggerValue = Input.GetAxis (PlayerPrefs.GetString ("P" + player + "Trigger"));
-			trigRaw = Input.GetAxis (PlayerPrefs.GetString ("P" + player + "Trigger"));
+			trigRaw = Input.GetAxisRaw (PlayerPrefs.GetString ("P" + player + "Trigger"));
 		} else {
 			if (!isBotChecked) {
 				if (PlayerPrefs.HasKey ("Bot")) {
@@ -62,7 +62,7 @@ public float triggerValue;
 				isBotChecked = true;
 			}
 			triggerValue = Input.GetAxis (TriggerName);
-			trigRaw = Input.GetAxisRaw (TriggerName);
+			//trigRaw = Input.GetAxisRaw (TriggerName);
 		}
 
 		// Checks if trigger is pressed or released
@@ -103,7 +103,7 @@ public float triggerValue;
 			// Since there are two events(start pulling and completely pulled)
 			// which is represent by lightly pressing the trigger and
 			// having it fully pressed, first we need to check for those events
-			if ((trigRaw >= 1f || (trigRaw <= 0.05f && trigRaw > 0f)) && triggerAllowed && released && (trigRaw != trigRawTmp) && timer > 1)
+			if ((trigRaw >= 1f || (trigRaw <= 0.05f && trigRaw > 0f)) && triggerAllowed && released && (trigRaw != trigRawTmp) && (timer > 1))
 			{
 				//Debug.Log(TriggerName + " EVENT  " + trigRaw);
 				released = false;
