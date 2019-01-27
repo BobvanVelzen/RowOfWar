@@ -34,7 +34,7 @@ public class MockRowingMachine : RowingMachine {
 
 	private float timer = 0f;
 
-	public float triggerValue; // TODO: Jack did this. we hate him now.
+	public float triggerValue;
 
 	void FixedUpdate () {
 		timer += Time.deltaTime;

@@ -62,7 +62,6 @@ public class MatchManager : MonoBehaviour {
 
     float RopePositionProgress(RowingMachine player, RowingMachine CPU, float maxValue)
     {
-        //float value = multiplier * (Mathf.Abs(player.Offset) - Mathf.Abs(CPU.Offset));
         float value = multiplier * (player.PullStrength - CPU.PullStrength);
         value = Mathf.Clamp(value, -maxValue, maxValue);
         return Mathf.Abs(value) > 0.01f ? value : 0f;
